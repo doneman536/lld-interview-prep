@@ -20,9 +20,9 @@ public class TaskManagerService {
                 Task processingTask = taskDatabase.remove(taskId);
                 Thread.sleep(1000);
                 System.out.println(MessageFormat.format("Task {0} processed and completed", taskId));
+                return;
             }
             System.out.println(MessageFormat.format("Task is {0} already completed", taskId));
-            return;
         }catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.out.println(MessageFormat.format("Task is {0} failed", taskId));
